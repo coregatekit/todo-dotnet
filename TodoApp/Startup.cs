@@ -22,11 +22,11 @@ namespace TodoApp
         public void ConfigureServices(IServiceCollection services)
         {
             // Use Postgresql db
-            // services.AddDbContext<TodoContext>(options =>
-            //     options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<TodoContext>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
 
             // Use in memory db
-            services.AddDbContext<TodoContext>(options => options.UseInMemoryDatabase("TodoList"));
+            // services.AddDbContext<TodoContext>(options => options.UseInMemoryDatabase("TodoList"));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
